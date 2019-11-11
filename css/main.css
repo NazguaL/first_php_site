@@ -1,0 +1,15 @@
+.mt-auto, .my-auto {
+    margin-top: auto !important;
+}
+
+.container {
+    width: auto;
+    max-width: 680px;
+    padding: 0 15px;
+}
+
+.footer {
+    width: 100%;
+    background-color: #f5f5f5;
+
+}
