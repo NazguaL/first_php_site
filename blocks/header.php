@@ -6,7 +6,7 @@
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="{% url 'articles-home' %}">Главная</a>
+                <a class="nav-link" href="index.php">Главная</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'contacts' %}">Контакты</a>
@@ -14,7 +14,7 @@
         </ul>
     </div>
     <div class="navbar-nav">
-        <a href="#" class="btn btn-outline-secondary mr-2">Регистрация</a>
+        <a href="reg.php" class="btn btn-outline-secondary mr-2">Регистрация</a>
         <a href="#" class="btn btn-outline-secondary">Вход</a>
     </div>
 </header>
