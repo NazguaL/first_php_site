@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-md-8 mb-5">
             <h4>Регистрация</h4>
-            <form action="reg/reg_helper.php" method="get">
+            <form action="reg/reg_helper.php" method="post">
 
                 <label for="username">Ваше Имя:</label>
                 <input type="text" name="username" id="username" class="form-control">
@@ -24,8 +24,8 @@
                 <input type="password" name="password1" id="password1" class="form-control">
                 <label for="password2">Повторите ваш пароль:</label>
                 <input type="password" name="password2" id="password2" class="form-control">
-
-                <button type="submit" class="btn btn-success mt-5">Зарегистрироваться</button>
+                <div class="alert-danger alert-primary mt-3 errorBlock" id="errorBlock"></div>
+                <button type="button" class="btn btn-success mt-5" id="reg_user">Зарегистрироваться</button>
             </form>
         </div>
         <?php include 'blocks/side.php' ?>
@@ -33,5 +33,39 @@
 </main>
 </body>
 <?php include 'blocks/footer.php' ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $('#reg_user').click(function () {
+        alert("3000");
+        var username = $('#username').val();
+        var email = $('#email').val();
+        var login = $('#login').val();
+        var password1 = $('#password1').val();
+        var password2 = $('#password2').val();
+        alert(username);
+
+        $.ajax({
+            url: 'reg/reg_helper.php',
+            type: 'POST',
+            cache: false,
+            data: {'username': username, 'email': email, 'login': login, 'password1': password1,
+                   'password2': password2},
+            dataType: 'html',
+            success: function (data) {
+                if (data == 'Success') {
+                    $('#reg_user').text('Вы зарегистрированы!!!');
+                    $('#errorBlock').hide();
+                }
+                else {
+                    $('#errorBlock').show();
+                    $('#errorBlock').text(data);
+                }
+            }
+
+        });
+    });
+</script>
+
+
 </html>
 
