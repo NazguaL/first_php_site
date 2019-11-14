@@ -11,8 +11,9 @@
     <main class="container">
         <div class="row">
             <div class="col-md-8 mb-5">
-                {% block body %}
-                {% endblock %}
+                <?php
+                    require_once 'main.php';
+                ?>
             </div>
             <?php include 'blocks/side.php' ?>
         </div>

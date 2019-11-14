@@ -11,6 +11,15 @@
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'contacts' %}">Контакты</a>
             </li>
+            <?php
+            if (isset($_COOKIE['login']) != ''):
+            ?>
+            <li class="nav-item">
+                <a class="nav-link" href="article.php">Создать новость</a>
+            </li>
+            <?php
+                endif
+            ?>
         </ul>
     </div>
     <div class="navbar-nav">
