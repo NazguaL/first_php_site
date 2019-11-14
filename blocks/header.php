@@ -14,7 +14,17 @@
         </ul>
     </div>
     <div class="navbar-nav">
+        <?php
+        if (isset($_COOKIE['login']) == ''):
+        ?>
         <a href="reg.php" class="btn btn-outline-secondary mr-2">Регистрация</a>
-        <a href="#" class="btn btn-outline-secondary">Вход</a>
+        <a href="auth.php" class="btn btn-outline-secondary">Авторизация</a>
+        <?php
+            else:
+        ?>
+            <a href="auth.php" class="btn btn-outline-secondary">Страница пользователя <?=$_COOKIE['login']?></a>
+        <?php
+            endif
+        ?>
     </div>
 </header>
