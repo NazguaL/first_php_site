@@ -32,8 +32,25 @@
             else:
         ?>
             <a href="auth.php" class="btn btn-outline-secondary">Страница пользователя <?=$_COOKIE['login']?></a>
+            <button class="btn btn-danger ml-3" id="exit_btn">Выйти</button>
         <?php
             endif
         ?>
     </div>
+<script>
+    $('#exit_btn').click(function () {
+
+        $.ajax({
+            url: 'exit.php',
+            type: 'POST',
+            cache: false,
+            data: {},
+            dataType: 'html',
+            success: function (data) {
+                alert('Вы вышли с сайта');
+                document.location.reload(true);
+            }
+        });
+    });
+</script>
 </header>

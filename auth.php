@@ -27,7 +27,7 @@
                 else:
             ?>
                     <h2><?=$_COOKIE['login']?></h2>
-                    <button class="btn btn-danger" id="exit_btn">Выйти</button>
+
             <?php
                 endif;
             ?>
@@ -35,7 +35,6 @@
         <?php include 'blocks/side.php' ?>
     </div>
 </main>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
     $('#auth_user').click(function () {
         var login = $('#login').val();
@@ -61,20 +60,6 @@
                 }
             }
 
-        });
-    });
-    $('#exit_btn').click(function () {
-
-        $.ajax({
-            url: 'exit.php',
-            type: 'POST',
-            cache: false,
-            data: {},
-            dataType: 'html',
-            success: function (data) {
-                alert('Вы вышли с сайта');
-                document.location.reload(true);
-            }
         });
     });
 </script>
