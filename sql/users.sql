@@ -1,0 +1,9 @@
+CREATE TABLE users
+(
+    id INT(16) NOT NULL AUTO_INCREMENT,
+    name VARCHAR(32) NOT NULL,
+    email VARCHAR(128) NOT NULL,
+    login VARCHAR(32) NOT NULL,
+    password VARCHAR(32) NOT NULL
+);
+CREATE UNIQUE INDEX id ON users (id);
